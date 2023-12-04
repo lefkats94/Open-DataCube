@@ -1,0 +1,82 @@
+{% extends "default.html" %} {% load bootstrap3 %}
+<!--
+    Copyright 2016 United States Government as represented by the Administrator
+    of the National Aeronautics and Space Administration. All Rights Reserved.
+
+    Portion of this code is Copyright Geoscience Australia, Licensed under the
+    Apache License, Version 2.0 (the "License"); you may not use this file
+    except in compliance with the License. You may obtain a copy of the License
+    at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    The CEOS 2 platform is licensed under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0.
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    License for the specific language governing permissions and limitations
+    under the License.
+  -->
+
+{% block css %}
+
+{% endblock %}
+{% block content %}
+<div class="container container-table no_footer">
+    <div class="row vertical-center-row">
+        <div class="col-xs-12">
+            <div class="col-sm-6">
+                <img src="/static/assets/images/screen_pontos.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-sm-6">
+                <h1>Welcome to PONTOS Data Cube</h1>
+                <p>PONTOS Data Cube enables end-users with the ability of easy exploration, management, analysis and visualisation of medium resolution (10 - 30m/pixel) data from satellite missions for each PONTOS pilot area. </p>
+                <ul>It offers:
+                    <li>Ease of use and access to satellite-based data</li>
+                    <li>Multiple dataset interoperability and spatial consistency</li>
+                    <li>Use of Analysis Ready Data (ARD) Products</li>
+                    <li>A Shift in Paradigm from Scenes to Pixels</li>
+                </ul>
+                <p> <b> PONTOS Data Cube contains:</b>
+                <ul>
+                    <li>Landsat 5, 7 & 8 ARD in a spatial resolution of 30m from 1984 to present,</li>
+                    <li>Sentinel-2 ARD in a spatial resolution of 10m from 2015 to present</li>
+                </ul>
+                </p>
+                <hr />
+                {% if not user.is_authenticated %}
+                <div class="form-group form-group-btns pull-right">
+                  <a href="/accounts/login?next=/" class="btn btn-primary">Log In</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <p> <b> Instructions</b>: 
+                <ul>
+                <li>All web browsers are supported. The system has been tested with Google Chrome, Mozilla Firefox and Opera.</li>
+                <li>In order to use the applications, you should sign in or register, in case you don't have an account.</li>
+                <li>The available applications are divided into three main categories: Land, Water and General.</li>
+                <li>From <i> Menu > Tools > Choose Category > Application</i>, you may select the application you wish <i> e.g., Water Detection</i>.</li>
+                <li>From <i> Menu > Task Manager > Choose Category > Application</i>, you may view / download the output of your most recent application's execution.</li>
+                <li>From <i> Menu > Data Cube Manager</i>, you may find more information about the available datasets.</li>
+            </ul>
+            </p>
+            <hr />
+            <div class="col-lg-12">
+                <p> <center>PONTOS project has received funding from the ENI CBC Joint Operational Programme Black Sea Basin 2014 - 2020 under Grand Agreement BSB 889</center></p>
+                    <br/>
+                    <p><span>
+                    <center><a href="https://pontos-eu.aua.am/" target="_blank"><img src="/static/assets/images/PONTOS_Logo.png" alt="" class=""></a> &nbsp; &nbsp;<img src="/static/assets/images/Europe_Logo.png" alt="" class="">&nbsp; &nbsp;<img src="/static/assets/images/BlackSea_Logo.png" alt="" class=""></center>
+                   </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
